@@ -14,12 +14,15 @@ public class Spawner : MonoBehaviour
     {
         if (timeBtwSpawn <= 0)
         {
-            short currentMultiplier = (short)(Score.scoreValue / 100);
-            if (currentMultiplier != lastMultiplier)
+            if (Score.scoreValue < 999)
             {
-                float decreaseAmount = 0.1f * currentMultiplier;
-                startTimeBtwSpawn = Mathf.Max(startTimeBtwSpawn - decreaseAmount, 0.1f);
-                lastMultiplier = currentMultiplier;
+                short currentMultiplier = (short)(Score.scoreValue / 100);
+                if (currentMultiplier != lastMultiplier)
+                {
+                    float decreaseAmount = 0.1f * currentMultiplier;
+                    startTimeBtwSpawn = Mathf.Max(startTimeBtwSpawn - decreaseAmount, 0.1f);
+                    lastMultiplier = currentMultiplier;
+                }
             }
 
             Instantiate(enemies[Random.Range(0, enemies.Length)], transform.position, Quaternion.identity);
