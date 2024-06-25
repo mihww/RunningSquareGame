@@ -30,17 +30,18 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftArrow))
+
+        switch (true)
         {
-            ChangePlayerState(0, "r");
-        }
-        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            ChangePlayerState(1, "g");
-        }
-        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            ChangePlayerState(2, "b");
+            case bool _ when Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftArrow):
+                ChangePlayerState(0, "r");
+                break;
+            case bool _ when Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.DownArrow):
+                ChangePlayerState(1, "g");
+                break;
+            case bool _ when Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.RightArrow):
+                ChangePlayerState(2, "b");
+                break;
         }
 
     }
@@ -64,7 +65,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            
+
             other.GetComponent<Enemy>().Restart();
             Destroy(gameObject);
             Debug.Log("Playing failure clip");
