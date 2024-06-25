@@ -1,35 +1,55 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.UI;
 using TMPro;
 using System.IO;
 
-
 public class Score : MonoBehaviour
 {
-    public static int scoreValue = 0;
-    private static int highScore { get; set; } = -1;
+    public static int scoreValue;
+    private static int highScore;
     public TextMeshProUGUI scoreText;
-   
+    public TextMeshProUGUI highScoreText;
+    private string highScoreFilePath;
 
-    // Start is called before the first frame update
     void Start()
     {
-        scoreText = GetComponent<TextMeshProUGUI>(); 
+        scoreText = GetComponent<TextMeshProUGUI>();
+        scoreValue = 0;
+        highScoreFilePath = Path.Combine(Application.persistentDataPath, "highscore.txt");
+
+        LoadHighScore();
+
+        highScoreText.text = "High Score: " + highScore;
     }
 
-    private void Update()
+    void Update()
     {
         scoreText.text = "Score: " + scoreValue;
 
-        if(scoreValue > highScore)
+        if (scoreValue > highScore)
         {
             highScore = scoreValue;
-
-            File.AppendAllLines("highscore.txt", new string[] { highScore.ToString() });
+            SaveHighScore();
+            
         }
     }
-    
+
+    void SaveHighScore()
+    {
+        File.WriteAllText(highScoreFilePath, highScore.ToString());
+    }
+
+    void LoadHighScore()
+    {
+        if (File.Exists(highScoreFilePath))
+        {
+            string highScoreString = File.ReadAllText(highScoreFilePath);
+            if (int.TryParse(highScoreString, out int loadedHighScore))
+            {
+                highScore = loadedHighScore;
+            }
+        }
+    }
 }

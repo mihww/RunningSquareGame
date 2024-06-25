@@ -9,13 +9,26 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource musicSource;
     [SerializeField] AudioSource sfxSource;
 
-   [Header("---- Audio Clip ----")]
+    [Header("---- Audio Clip ----")]
     public AudioClip background;
     public AudioClip death;
     public AudioClip kill;
 
+    public static AudioManager instance;
 
-
+    void Awake()
+    {
+        if (instance == null)   
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject); // Destroy the new instance if one already exists
+            return;
+        }
+    }
 
 
     // Start is called before the first frame update
@@ -30,14 +43,9 @@ public class AudioManager : MonoBehaviour
 
 
 
-    public void PlaySFX (AudioClip clip)
+    public void PlaySFX(AudioClip clip)
     {
         sfxSource.PlayOneShot(clip);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
