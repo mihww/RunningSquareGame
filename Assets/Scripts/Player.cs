@@ -30,15 +30,15 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             ChangePlayerState(0, "r");
         }
-        else if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.O) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             ChangePlayerState(1, "g");
         }
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             ChangePlayerState(2, "b");
         }
