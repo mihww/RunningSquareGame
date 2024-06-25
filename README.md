@@ -18,4 +18,8 @@ _All the assets should be easily found on **Unity Asset Store** (https://assetst
 ![image](https://github.com/mihww/RunningSquareGame/assets/147138758/e00e3a3e-5481-4fe7-bef6-22f0b4521b64)
 ![image](https://github.com/mihww/RunningSquareGame/assets/147138758/177f11a9-ae1c-46c7-ad90-d099d784241f)
 
+# Download:
++ [Google Drive](https://drive.google.com/file/d/1M175unzcMkyKJO6V4xi-WTldYZEY18NY/view?usp=sharing)
+  
+
 
