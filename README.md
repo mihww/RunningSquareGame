@@ -14,10 +14,11 @@ All the assets used in this game can be easily found on the [Unity Asset Store](
 
 ## Post-Processing Effects
 To enhance the visual quality of the game, several post-processing effects are implemented:
-- **Bloom:** Adds a glow to bright areas of the screen, making the game look more vibrant.
-- **Color Grading:** Adjusts the colors to give the game a specific mood or style.
-- **Motion Blur:** Simulates the blur seen in moving objects, adding a sense of speed and fluidity.
-- **Vignette:** Darkens the edges of the screen to focus attention on the center.
+- **Bloom**
+- **Color Grading** 
+- **Vignette**
+- **Chromatic Aberration**
+- **Grain**
 
 These effects are configured using the Unity Post-Processing Stack, which can be customized to fit your preferences.
 
