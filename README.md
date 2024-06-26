@@ -4,10 +4,10 @@
 RunningSquareGame is a basic running square game with colored enemies, written in C# using the Unity 2D Game Engine. The player needs to match the enemies' colors by pressing the corresponding keys.
 
 ## Controls
-- **Q / I / Left Arrow:** Change the player to **RED** color
-- **W / O / Down Arrow:** Change the player to **GREEN** color
-- **E / P / Right Arrow:** Change the player to **BLUE** color
-- **M:** Toggle music on/off
+- `Q` / `I` / `Left Arrow`: Change the player to **RED** color
+- `W` / `O` / `Down Arrow`: Change the player to **GREEN** color
+- `E` / `P` / `Right Arrow`: Change the player to **BLUE** color
+- `M`: Toggle music on/off
 
 ## Assets
 All the assets used in this game can be easily found on the [Unity Asset Store](https://assetstore.unity.com).
